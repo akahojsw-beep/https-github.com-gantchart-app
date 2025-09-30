@@ -314,6 +314,26 @@ if uploaded_file is not None:
                 tf.paragraphs[0].font.bold = True
                 tf.paragraphs[0].alignment = PP_ALIGN.CENTER
 
+ # S1, S2, S3, S4の値を取得してガントバー下に表示
+            s_col = bar_short[j]
+            months_label = ""
+            if s_col in row and pd.notnull(row[s_col]):
+                months_label = f"{row[s_col]:.1f}ヶ月"
+            label_top = bar_top + bar_height + Pt(1)
+            label_height = Pt(12)
+            label_shape = slide.shapes.add_textbox(
+                bar_left, label_top, bar_width, label_height
+            )
+            label_tf = label_shape.text_frame
+            label_tf.text = months_label
+            label_tf.paragraphs[0].font.size = Pt(8)
+            label_tf.paragraphs[0].font.color.rgb = RGBColor(0, 0, 0)
+            label_tf.paragraphs[0].font.name = "Yu Gothic UI"
+            label_tf.paragraphs[0].font.bold = True
+            label_tf.paragraphs[0].alignment = PP_ALIGN.CENTER
+
+
+
     # pptx保存（BytesIOで一時保存）
     output = io.BytesIO()
     prs.save(output)
