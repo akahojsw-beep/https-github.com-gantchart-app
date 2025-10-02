@@ -9,9 +9,10 @@ from pptx.enum.dml import MSO_LINE_DASH_STYLE
 import calendar
 import io
 
-st.title("ExcelからガントチャートPowerPoint生成")
 
-uploaded_file = st.file_uploader("Excelファイルをアップロードしてください", type=["xlsx"])
+st.title("Excel-Gantchart to PPT")
+
+uploaded_file = st.file_uploader("upload Excel file", type=["xlsx"])
 
 if uploaded_file is not None:
     # Excelデータ読み込み
