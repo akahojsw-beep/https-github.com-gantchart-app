@@ -263,6 +263,7 @@ if uploaded_file is not None:
 
     # ガントバー
     bar_labels = ["生産", "輸送・装着", "走行", "量産準備期間"]
+    bar_short = ["S1", "S2", "S3", "S4"]
     bar_colors = [
         RGBColor(184, 204, 228),
         RGBColor(255, 242, 204),
